@@ -1,19 +1,17 @@
-# 🎈 Blank app template
+import streamlit as st
 
-A simple Streamlit app template for you to modify!
+st.set_page_config(page_title="AI Career Guidance", layout="centered")
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+st.title("🎓 AI Career Guidance System")
+st.write("Enter your marks and get career suggestions")
 
-### How to run it on your own machine
+name = st.text_input("Student Name")
 
-1. Install the requirements
+maths = st.slider("Maths", 0, 100, 50)
+physics = st.slider("Physics", 0, 100, 50)
+chemistry = st.slider("Chemistry", 0, 100, 50)
+computer = st.slider("Computer", 0, 100, 50)
+biology = st.slider("Biology", 0, 100, 50)
 
-   ```
-   $ pip install -r requirements.txt
-   ```
-
-2. Run the app
-
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+if st.button("Submit"):
+    st.success(f"Thanks {name}! Marks submitted successfully ✅")
